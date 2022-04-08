@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
+    //Usar nombres de metodos entendibles, en formato PascalCase, y con un verbo
+    //por ej: ObtenerPromedio o CalcularProductoParesImpares
     public static class MetodosdeExtencion
     {
         
-        static int ContarPalabras(this string Valor)
+        static int ContarPalabras(this string Valor) //parametros van en minuscula
         {
             return (Valor.Split(' ')).Length;
         }
-        static int ContarPalabras(this string Valor, char separador)
+        static int ContarPalabras(this string Valor, char separador) //parametros van en minuscula
         {
             return (Valor.Split(separador)).Length;
         }
-        static decimal diferencia(this DateTime Fecha1,  DateTime Fecha2)
+        static decimal diferencia(this DateTime Fecha1,  DateTime Fecha2) //parametros van en minuscula
         {
             decimal fecha3 = Fecha1.Second - Fecha2.Second;
             return fecha3 / 60;
@@ -32,9 +34,11 @@ namespace ClassLibrary1
             {
                 suma = suma + lista[i];
             }
+
+            //podrias usar lista.Average()
             return (suma/cantidad);
         }
-        static int paresporinpares(this List<int>listaparimpar)
+        static int paresporinpares(this List<int>listaparimpar) 
         {
             int inpar = 0;
             int par = 0;
@@ -88,6 +92,8 @@ namespace ClassLibrary1
         }
         static persona personafinal(this persona persona1, persona persona2)
         {
+           //Se puede hacer mucho mas optimo.
+
            persona persona = new persona(); 
             if (persona1.cuit == persona2.cuit)
             {
